@@ -4,8 +4,24 @@
     <title>My First Website</title>
   </head>
   <body>
-    <h1>Hello, world!</h1>
-    <p>This is my first website. It's pretty neat.</p>
-    <p>This should be a second line.</p>
+    <h1>Random Image Generator</h1>
+
+    <button onclick="showRandomImage()">Show Random Image</button>
+
+    <br><br>
+    <img id="randomImage" src="" width="300">
+
+    <script>
+      const images = [
+        "https://picsum.photos/300?random=1",
+        "https://picsum.photos/300?random=2",
+        "https://picsum.photos/300?random=3"
+      ];
+
+      function showRandomImage() {
+        const randomIndex = Math.floor(Math.random() * images.length);
+        document.getElementById("randomImage").src = images[randomIndex];
+      }
+    </script>
   </body>
 </html>
